@@ -29,7 +29,7 @@ use tracing::{debug, info, info_span, instrument, trace, warn};
 
 use crate::export::Exporter;
 
-const BASE_RESOURCE_URL: &str = "https://raw.githubusercontent.com/Dimbreath/StarRailData/master";
+const BASE_RESOURCE_URL: &str = "https://raw.gitmirror.com/Dimbreath/StarRailData/master";
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Export {
@@ -283,7 +283,7 @@ impl Database {
     }
 
     fn load_online_keys() -> HashMap<u32, Vec<u8>> {
-        let keys: HashMap<u32, String> = Self::get("https://raw.githubusercontent.com/tamilpp25/Iridium-SR/main/data/Keys.json".to_string());
+        let keys: HashMap<u32, String> = Self::get("https://raw.gitmirror.com/tamilpp25/Iridium-SR/main/data/Keys.json".to_string());
         let mut keys_bytes = HashMap::new();
 
         for (k, v) in keys {
